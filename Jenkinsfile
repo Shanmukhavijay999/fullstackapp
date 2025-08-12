@@ -10,7 +10,7 @@ pipeline {
         BACKEND_DIR = 'crud_backend/crud_backend-main'
         FRONTEND_DIR = 'crud_frontend/crud_frontend-main'
 
-        TOMCAT_URL = 'http://184.72.122.226:9090/manager/text'
+        TOMCAT_URL = 'http://18.232.92.159:9090/manager/text'
         TOMCAT_USER = 'admin'
         TOMCAT_PASS = 'admin'
 
@@ -21,7 +21,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git url: 'https://github.com/srithars/fullstackapp.git', branch: 'master'
+                git url: 'https://github.com/Shanmukhavijay999/fullstackapp.git', branch: 'master'
             }
         }
 
@@ -86,8 +86,8 @@ pipeline {
 
     post {
         success {
-            echo "✅ Backend deployed: http://184.72.122.226:9090/springapp1"
-            echo "✅ Frontend deployed: http://184.72.122.226:9090/frontapp1"
+            echo "✅ Backend deployed: database-1.ca3ibyypspl7.us-east-1.rds.amazonaws.com"
+            echo "✅ Frontend deployed: 18.232.92.159"
         }
         failure {
             echo "❌ Build or deployment failed"
